@@ -12,7 +12,7 @@ let code5 = `
 const num = 5;
 
 function fiveMultiply(n) {
-    return 5 [...] n;
+  return 5 [...] n;
 }
 
 fiveMultiply(5);
@@ -52,16 +52,22 @@ class App extends Component {
 
   render() {
     return (
-      <AceEditor
-        mode="javascript"
-        theme="monokai"
-        name="editor"
-        fontSize={18}
-        height={300}
-        value={this.state.code}
-        readOnly
-        editorProps={{$blockScrolling: true}}
-      />
+      <div>
+        <div style={{ position: 'fixed', background: 'transparent', zIndex: 999, top: 0, left: 0, width: '100%', height: '100%' }}></div>
+        <AceEditor
+          mode="javascript"
+          theme="monokai"
+          name="editor"
+          fontSize={18}
+          wrapEnabled
+          width={'100%'}
+          height={250}
+          value={this.state.code}
+          tabSize={2}
+          readOnly
+          editorProps={{$blockScrolling: true}}
+        />
+      </div>
     );
   }
 }
